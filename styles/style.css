@@ -235,12 +235,9 @@
   padding: 0;
   outline: 2px solid transparent;
   background: transparent;
+  transition: outline-color 0.3s ease, transform 0.2s ease;
   cursor: pointer;
   inline-size: 39px;
-}
-
-.card__icon-button {
-  transition: outline-color 0.3s ease, transform 0.2s ease;
 }
 
 .card__icon-button:focus-visible {
@@ -351,7 +348,6 @@
 /* MOBILE ADAPTIVE */
 
 @media (width <= 374px) {
-  
   /* HEADER */
 
   .header {
