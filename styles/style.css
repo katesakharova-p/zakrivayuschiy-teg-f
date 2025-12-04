@@ -126,9 +126,6 @@
   text-transform: uppercase;
   pointer-events: none;
   mix-blend-mode: hard-light;
-}
-
-.card__watermark {
   text-shadow: -1px 0 var(--watermark-stroke-color),
     1px 0 var(--watermark-stroke-color), 0 -1px var(--watermark-stroke-color),
     0 1px var(--watermark-stroke-color);
