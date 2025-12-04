@@ -1,10 +1,9 @@
 :root {
-  
   /* FONTS */
   --font-accent: "PressStart2P", fantasy;
   --font-main: "Inter", system-ui, Arial, sans-serif;
-  --font-weight-text: 400;
-  --font-weight-title: 700;
+  --font-weight-text: 410;
+  --font-weight-title: 715;
 
   /* BACKGROUND */
   --page-background-image: repeating-linear-gradient(
@@ -17,7 +16,6 @@
 
   /* LAYOUT */
   --content-width: clamp(375px, calc(30.5vw + 260.6px), 700px);
-  --header-height: 368px;
   --header-padding-top: 100px;
   --header-padding-bottom: 98px;
 
@@ -28,8 +26,8 @@
   /* COLORS */
   --color-black: #000;
   --color-white: #fff;
-  --watermark-stroke-color: #ffffff;
-  --backdrop-bg: rgb(0 0 0 / 0.65);
+  --watermark-stroke-color: #fff;
+  --backdrop-bg: rgb(0 0 0 / 0.75);
 
   /* BUTTONS */
   --button-text-color: #fff;
@@ -42,7 +40,7 @@
   --button-transition-hover: 0.5s ease-in-out;
 
   /* WATERMARK */
-  --watermark-opacity: 0.6;
+  --watermark-opacity: 0.5;
   --watermark-font-size: 14px;
 
   /* LIKE ICON */

@@ -20,27 +20,26 @@
 .header {
   display: flex;
   justify-content: center;
-  padding-inline: 16px;
   padding-block-start: var(--header-padding-top);
   padding-block-end: var(--header-padding-bottom);
 }
 
+/* ВНУТРЕННИЙ БЛОК ХЕДЕРА */
+
 .header__block {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   gap: 20px;
   border: var(--button-border-size) solid var(--color-black);
+  padding: 130px 0px;
   background-color: var(--color-white);
   inline-size: 100%;
-  block-size: var(--header-height);
 }
 
 .header__title {
   font-family: var(--font-accent);
   font-size: var(--header-title-size);
-  font-variation-settings: "wght" var(--font-weight-title);
 }
 
 .header__subtitle {
@@ -87,29 +86,29 @@
 
 /* FILTERS */
 
-.image__begining {
-  filter: brightness(1.1) saturate(1.2) blur(0.5px);
+.image__blur {
+  filter: blur(0.3px);
 }
-.image__doubt {
+.image__mixed {
   filter: grayscale(20%) contrast(1.2) brightness(0.8) blur(0.6px);
 }
-.image__no-fear {
-  filter: saturate(1.4) contrast(1.15);
+.image__saturate {
+  filter: saturate(1.4);
 }
-.image__perfection {
-  filter: contrast(1.25) hue-rotate(-8deg);
+.image__contrast {
+  filter: contrast(1.25);
 }
-.image__support {
-  filter: sepia(30%) contrast(1.15);
+.image__sepia {
+  filter: sepia(30%);
 }
-.image__choice {
-  filter: grayscale(50%) blur(0.8px);
+.image__hue-rotate {
+  filter: hue-rotate(10deg);
 }
-.image__inspiration {
-  filter: brightness(1.05) hue-rotate(10deg);
+.image__grayscale {
+  filter: grayscale(30%);
 }
-.image__now {
-  filter: brightness(1.2) contrast(1.2);
+.image__brightness {
+  filter: brightness(1.2);
 }
 
 /* WATERMARK */
@@ -124,17 +123,20 @@
   font-family: var(--font-accent);
   font-size: var(--watermark-font-size);
   text-transform: uppercase;
-  pointer-events: none;
-  mix-blend-mode: hard-light;
+
   text-shadow: -1px 0 var(--watermark-stroke-color),
     1px 0 var(--watermark-stroke-color), 0 -1px var(--watermark-stroke-color),
     0 1px var(--watermark-stroke-color);
+  pointer-events: none;
+  mix-blend-mode: hard-light;
 }
 
-@supports (-webkit-text-stroke: 1px var(--watermark-stroke-color)) {
+@supports (-webkit-text-stroke: 1px var(--watermark-stroke-color)) or
+  (text-stroke: 1px var(--watermark-stroke-color)) {
   .card__watermark {
     text-shadow: none;
     -webkit-text-stroke: 1px var(--watermark-stroke-color);
+    text-stroke: 1px var(--watermark-stroke-color);
   }
 }
 
@@ -146,12 +148,13 @@
   gap: 25px;
   padding: 25px;
   font-size: 18px;
-  line-height: 21px;
+  line-height: 1.21;
 }
 
 .card__buttons {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   gap: 7px;
   padding: 25px;
 }
@@ -164,14 +167,13 @@
   justify-content: center;
   align-items: center;
   border: var(--button-border-size) solid var(--button-accent-color);
-  padding: 0;
   outline: none;
   overflow: hidden;
   font-family: var(--font-accent);
   font-size: 14px;
   line-height: 1;
   background-color: var(--button-bg-color);
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow var(--button-transition-focus);
   cursor: pointer;
 }
 
@@ -235,7 +237,18 @@
   background: transparent;
   cursor: pointer;
   inline-size: 39px;
-  block-size: 36px;
+}
+
+.card__icon-button {
+  transition: outline-color 0.3s ease, transform 0.2s ease;
+}
+
+.card__icon-button:focus-visible {
+  outline-color: var(--button-accent-color);
+}
+
+.card__icon-button:active {
+  transform: scale(0.9);
 }
 
 /* SAVE */
@@ -248,8 +261,8 @@
 
 .button__save {
   gap: 8px;
+  padding: 17px 18px;
   inline-size: 335px;
-  block-size: 55px;
 }
 
 /* ICONS */
@@ -268,7 +281,7 @@
 .floppy-icon {
   position: relative;
   z-index: 1;
-  fill: #fff;
+  color: var(--button-text-color);
   mix-blend-mode: difference;
 }
 
@@ -310,7 +323,6 @@
   padding: 30px;
   background: var(--color-white);
   inline-size: 353px;
-  block-size: 191px;
 }
 
 .dialog__row {
@@ -328,29 +340,33 @@
 }
 
 .button__dialog {
+  padding: 12.5px 0;
   inline-size: 100%;
-  block-size: 38px;
+}
+
+.button__dialog .button__text {
+  text-transform: uppercase;
 }
 
 /* MOBILE ADAPTIVE */
 
-@media (max-width: 375px) {
+@media (width <= 374px) {
+  
   /* HEADER */
 
   .header {
-    padding-inline: 0;
     padding-block-end: 100px;
   }
 
   .header__block {
-    block-size: 327px;
+    padding: 122px 0px;
   }
 
   /* SAVE */
   .button__save {
     flex-direction: column;
+    padding: 16px 0;
     inline-size: 306px;
-    block-size: 84px;
   }
 
   .button__save .floppy-icon {
@@ -358,11 +374,10 @@
     block-size: 28px;
   }
 
-  /* ---------- DIALOG ---------- */
+  /* DIALOG */
 
   .dialog__content {
     padding: 30px 40px;
     inline-size: 341px;
-    block-size: 191px;
   }
 }

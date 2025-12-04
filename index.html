@@ -19,30 +19,8 @@
   </head>
 
   <body class="page">
-    <!-- SVG SYMBOL -->
-    <svg style="display: none">
-      <symbol id="floppy-icon" viewBox="0 0 39 39">
-        <path
-          fill="#fff"
-          d="M0 0h3v3H0zm0 3h3v3H0zm0 3h3v3H0zm0 3h3v3H0zm0 3h3v3H0zm0 3h3v3H0zm0 
-          3h3v3H0zm0 3h3v3H0zm0 3h3v3H0zm0 3h3v3H0zm0 3h3v3H0zm0 3h3v3H0zm0 3h3v3H0zM33 
-          0v3h-3V0zm-3 0v3h-3V0zm-3 0v3h-3V0zm-3 0v3h-3V0zm-3 0v3h-3V0zm-3 0v3h-3V0zm-3 
-          0v3h-3V0zm-3 0v3H9V0zM9 0v3H6V0zM6 0v3H3V0zm30 3v3h-3V3zM9 6v3H6V6zm0-3v3H6V3zm0 
-          6v3H6V9zm21-3v3h-3V6zm0-3v3h-3V3zm0 6v3h-3V9zm-6-3v3h-3V6zm0-3v3h-3V3zm0 
-          6v3h-3V9zm6 3v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 
-          0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3H9v-3zm-3 0v3H6v-3zm24 9v3h-3v-3zm-3 
-          0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 
-          0v3h-3v-3zm-3 0v3H9v-3zm-3 0v3H6v-3zm24 3v3h-3v-3zM9 24v3H6v-3zm24 3v3h-3v-3zM9 
-          27v3H6v-3zm24 3v3h-3v-3zM9 30v3H6v-3zm0 3v3H6v-3zm24 0v3h-3v-3zm3 3v3h-3v-3zm-3 
-          0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 
-          0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3H9v-3zm-3 0v3H6v-3zm-3 0v3H3v-3zm33 
-          3h-3v-3h3zm0-3h-3v-3h3zm0-3h-3v-3h3zm0-3h-3v-3h3zm0-3h-3v-3h3zm0-3h-3v-3h3zm0-3h-3v-3h3zm0-3h-3v-3h3zm0-3h-3v-3h3zm0-3h-3V9h3zm0-3h-3V6h3z"
-        />
-      </symbol>
-    </svg>
-
     <header class="header">
-      <div class="header__block content-width">
+      <div class="header__block">
         <h1 class="header__title">&lt;/HTML&gt;</h1>
         <p class="header__subtitle">закрывающий тег</p>
       </div>
@@ -61,7 +39,7 @@
             <img
               src="./images/begining.jpg"
               alt="Женщина работает за компьютером, над головой изображения иконки идей"
-              class="card__image image__begining"
+              class="card__image image__blur"
               loading="lazy"
             />
           </div>
@@ -134,7 +112,7 @@
             <img
               src="./images/doubt.jpg"
               alt="Три изображения в одном: женщина учится, работает и играет с ребёнком"
-              class="card__image image__doubt"
+              class="card__image image__mixed"
               loading="lazy"
             />
           </div>
@@ -208,7 +186,7 @@
             <img
               src="./images/no-fear.jpg"
               alt="Женщина радостно смотрит на экран монитора"
-              class="card__image image__no-fear"
+              class="card__image image__saturate"
               loading="lazy"
             />
           </div>
@@ -280,7 +258,7 @@
             <img
               src="./images/perfection.jpg"
               alt="Женщина смотрит на монитор сайта doka.guide"
-              class="card__image image__perfection"
+              class="card__image image__contrast"
               loading="lazy"
             />
           </div>
@@ -355,7 +333,7 @@
             <img
               src="./images/support.jpg"
               alt="Женщина улыбается, на экране чат с куратором"
-              class="card__image image__support"
+              class="card__image image__sepia"
               loading="lazy"
             />
           </div>
@@ -431,7 +409,7 @@
             <img
               src="./images/choice.jpg"
               alt="Женщина обеспокоено смотрит на ноутбук"
-              class="card__image image__choice"
+              class="card__image image__hue-rotate"
               loading="lazy"
             />
           </div>
@@ -506,7 +484,7 @@
             <img
               src="./images/inspiration.jpg"
               alt="Взрослые обсуждают за столом, дети играют рядом"
-              class="card__image image__inspiration"
+              class="card__image image__grayscale"
               loading="lazy"
             />
           </div>
@@ -580,8 +558,8 @@
             <span class="card__watermark">Не сдаёмся</span>
             <img
               src="./images/now.jpg"
-              alt="Это я и мой сыночек"
-              class="card__image image__now"
+              alt="Женщина с ребёнком"
+              class="card__image image__brightness"
               loading="lazy"
             />
           </div>
@@ -656,8 +634,9 @@
           onclick="document.getElementById('save-dialog').showModal()"
         >
           <svg class="icon floppy-icon" viewBox="0 0 39 39" aria-hidden="true">
-            <use href="#floppy-icon"></use>
+            <use href="./svg/floppy.svg#floppy-icon"></use>
           </svg>
+
           <span class="button__text">Сохранить на память</span>
         </button>
       </div>
@@ -667,14 +646,15 @@
     <dialog class="dialog" id="save-dialog" aria-label="Диалог сохранения">
       <div class="dialog__content">
         <div class="dialog__row">
-          <svg class="icon floppy-icon" viewBox="0 0 39 39">
-            <use href="#floppy-icon"></use>
+          <svg class="icon floppy-icon" viewBox="0 0 39 39" aria-hidden="true">
+            <use href="./svg/floppy.svg#floppy-icon"></use>
           </svg>
-          <h2 class="dialog__title">Вставьте дискету, чтобы продолжить</h2>
+
+          <p class="dialog__title">Вставьте дискету, чтобы продолжить</p>
         </div>
         <form method="dialog">
           <button type="submit" class="button button__dialog">
-            <span class="button__text">OK</span>
+            <span class="button__text">ок</span>
           </button>
         </form>
       </div>
