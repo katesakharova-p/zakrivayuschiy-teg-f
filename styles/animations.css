@@ -30,7 +30,6 @@
 
 .like-icon {
   display: block;
-  transform-origin: center;
 }
 
 .contour {
@@ -97,9 +96,10 @@
 }
 
 .like-icon.is-liked .heart {
-  animation: heart-scale 0.3s ease-in 0.1s 1;
+  transform-origin: center;
+  animation: heart-scale 0.3s ease-in 0.1s 1 alternate;
 }
 
 .like-icon.is-liked .sparks {
-  animation: sparks-opacity 0.3s ease-in 0.3s 1;
+  animation: sparks-opacity 0.3s ease-in 0.3s 1 alternate;
 }
